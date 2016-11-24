@@ -49,18 +49,7 @@
           pageTitle: 'Edit Patient {{ patientResolve.name }}'
         }
       })
-      .state('patients.view', {
-        url: '/:patientId',
-        templateUrl: 'modules/patients/client/views/view-patient.client.view.html',
-        controller: 'PatientsController',
-        controllerAs: 'vm',
-        resolve: {
-          patientResolve: getPatient
-        },
-        data:{
-          pageTitle: 'Patient {{ articleResolve.name }}'
-        }
-      });
+
   }
 
   getPatient.$inject = ['$stateParams', 'PatientsService'];
