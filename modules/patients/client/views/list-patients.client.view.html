@@ -1,0 +1,62 @@
+<section>
+  <div class="page-header">
+    <h1>Patients</h1>
+  </div>
+    <div class="section">
+
+      <div class="row body body-panel" style="background-color: rgba(128, 128, 128, 0.08); margin-bottom:2%;
+      border: 1px solid #d8d8d8;box-shadow: 2px 2px 2px #d8d8d8;-webkit-box-shadow:2px 2px 2px #d8d8d8" data-ng-repeat="patient in vm.patients"
+           data-ui-sref="patients.view({ patientId: patient._id })"
+           class="list-group-item">
+        <div class="col-xs-12">
+
+        <small class="list-group-item-text">
+          Posted on
+          <span data-ng-bind="patient.created | date:'mediumDate'"></span>
+          by
+          <span data-ng-if="patient.user" data-ng-bind="patient.user.displayName"></span>
+          <span data-ng-if="!patient.user">Deleted User</span>
+        </small>
+          </div>
+        <div class="col-xs-12">
+          <label>First name</label>
+          <span data-ng-bind="patient.fname"></span>
+        </div>
+
+
+        <div class="col-xs-12">
+          <label>Last name</label>
+          <span data-ng-bind="patient.lname"></span>
+        </div>
+
+        <div class="col-xs-12">
+          <label>Age</label>
+          <span data-ng-bind="patient.age"></span>
+        </div>
+
+        <div class="col-xs-12">
+          <label>DOB</label>
+          <span data-ng-bind="patient.dob"></span>
+        </div>
+        <div class="col-xs-12">
+          <label>Gender</label>
+          <span data-ng-bind="patient.gender"></span>
+        </div>
+
+
+        <div class="col-xs-12">
+          <label>Phone</label>
+          <span data-ng-bind="patient.phone"></span>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.patients.$resolved && !vm.patients.length">
+    No Patients yet, why don't you <a data-ui-sref="patients.create">create one</a>?
+  </div>
+</section>
