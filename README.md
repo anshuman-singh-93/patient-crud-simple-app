@@ -6,3 +6,15 @@
 
 3-challange related main code is in /modules/pateint directory
 
+
+<h4>How to run</h4>
+
+Make sure you have installed Nodejs
+
+step 1- pull the code
+
+step 2-npm install --production --save
+
+step 3-bower install --save
+
+step 4- node server.js
